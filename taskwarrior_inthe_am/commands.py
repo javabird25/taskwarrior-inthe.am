@@ -117,7 +117,7 @@ def setup(config, args, *extra, **kwargs):
         full_path = os.path.join(data_location, filename)
         with codecs.open(full_path, 'w', encoding='utf-8') as out:
             full_url = 'https://inthe.am%s' % url
-            content = api.get(full_url).content
+            content = api.get(full_url).text
             out.write(content)
             logger.info(
                 "File '%s' written to %s.",
